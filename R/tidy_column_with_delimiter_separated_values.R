@@ -7,10 +7,10 @@
 #' @param column The name of the column that contains delimiter-separated values.
 #' @return A modified tibble/data frame where the specified column has been separated into multiple rows and pivoted to a wider format, showing the presence of each 'value.'
 #' @examples
-#' data <- data.frame(ID = 1:3, Codes = c("A|B|C", "D|E", "F|G|H|I"))
-#' tidy_column_with_delimiter_separated_values(data, delimiter = "|", column = Codes)
+#' example <- data.frame(ID = 1:3, Codes = c("A,B,C", "D,E", "F,G,H,I"))
+#' tidy_column_with_delimiter_separated_values(example, delimiter = ",", column = Codes)
 #' @export
-tidy_column_with_delimiter_seperated_values <- function(data, delimiter, column) {
+tidy_column_with_delimiter_separated_values <- function(data, delimiter, column) {
   col_name <- deparse(substitute(column))
   stopifnot(col_name %in% colnames(data))
   stopifnot(is.character(data[[col_name]]))
