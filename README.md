@@ -27,7 +27,7 @@ devtools::install_github("stat545ubc-2023/EasyTidy")
 
 ## Usage
 
-Currently the package only contain one function:
+Currently EasyTidy only contain one function:
 
 ### tidy_column_with_delimiter_separated_values
 

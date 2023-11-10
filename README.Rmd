@@ -32,9 +32,9 @@ devtools::install_github("stat545ubc-2023/EasyTidy")
 
 ## Usage
 
-Currently the package only contain one function:
+Currently EasyTidy only contain one function:
 
-### tidy_column_with_delimiter_separated_values 
+### tidy_column_with_delimiter_separated_values
 
 The `tidy_column_with_delimiter_separated_values` function is used to separate a column with delimiter-separated values into multiple rows and pivot it into a wider format, indicating the presence of each value. Here's an example of how to use it:
 

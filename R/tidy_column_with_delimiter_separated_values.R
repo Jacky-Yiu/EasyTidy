@@ -10,14 +10,15 @@
 #' example <- data.frame(ID = 1:3, Codes = c("A,B,C", "D,E", "F,G,H,I"))
 #' tidy_column_with_delimiter_separated_values(example, delimiter = ",", column = Codes)
 #' @export
+
 tidy_column_with_delimiter_separated_values <- function(data, delimiter, column) {
   col_name <- deparse(substitute(column))
   stopifnot(col_name %in% colnames(data))
   stopifnot(is.character(data[[col_name]]))
 
-  data |>
-    tidyr::separate_rows({{ column }}, sep = delimiter) |>
-    dplyr::mutate(value = TRUE) |>
+  data %>%
+    tidyr::separate_rows({{ column }}, sep = delimiter) %>%
+    dplyr::mutate(value = TRUE) %>%
     tidyr::pivot_wider(names_from = {{ column }},
                 values_from = value,
                 values_fill =  FALSE,
